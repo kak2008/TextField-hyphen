@@ -15,19 +15,30 @@ class ViewController: UIViewController, UITextFieldDelegate {
     let numbers = [3, 7, 14]
     let maximumCharactersLimit = 15
     
+    // MARK:- View life cycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTextField()
+    }
+    
+    // MARK:- Helper methods
+    
+    func configureTextField() {
         textField.delegate = self
         textField.autocapitalizationType = .allCharacters
         textField.keyboardType = .alphabet
     }
+    
+    
+    // MARK:- Textfield Delegate Methods
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text, range.location < maximumCharactersLimit, string.isAlphaNumbericalString else { return false }
 
         if let textRange = Range(range, in: text) {
             let updatedText = text.replacingCharacters(in: textRange, with: string)
-            addHyphenTo(text: updatedText)
+            configureTextfieldText(updatedText)
         }
         
         return isCharacterLocation(numbers: numbers, rangeLocation: range.location)
@@ -36,8 +47,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func isCharacterLocation(numbers: [Int], rangeLocation: Int) -> Bool {
         var isCharacterLocation = true
         
-        numbers.forEach { (number) in
-            isCharacterLocation = (number != rangeLocation + 2)
+        for number in numbers {
+            if number == rangeLocation + 2 {
+                isCharacterLocation = false
+            }
         }
         
         if rangeLocation == maximumCharactersLimit - 1 {
@@ -47,19 +60,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return isCharacterLocation
     }
     
-    func addHyphenTo(text: String) {
+    func configureTextfieldText(_ text: String) {
         var modifiedText = text
         numbers.forEach { (number) in
             if number == text.count + 1 {
                 if number == 7 {
-                    modifiedText.remove(at: text.index(text.startIndex, offsetBy: 1))
-                    modifiedText.insert("L", at: text.index(text.startIndex, offsetBy: 1))
+                    modifiedText = removeAndInsertCharacter(at: text.index(text.startIndex,
+                                                                           offsetBy: 1),
+                                                            withElement: "L",
+                                                            for: modifiedText)
                 }
                 
                 if number == maximumCharactersLimit - 1 {
                     [8, 9, 10, 11, 12, 13].forEach { (num) in
-                        modifiedText.remove(at: text.index(text.startIndex, offsetBy: num - 1))
-                        modifiedText.insert("1", at: text.index(text.startIndex, offsetBy: num - 1))
+                        modifiedText = removeAndInsertCharacter(at: text.index(text.startIndex,
+                                                                               offsetBy: num - 1),
+                                                                withElement: "1",
+                                                                for: modifiedText)
                     }
                 }
                 
@@ -70,11 +87,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         
         if text.count == maximumCharactersLimit {
-            modifiedText.remove(at: text.index(text.startIndex, offsetBy: maximumCharactersLimit - 1))
-            modifiedText.insert("1", at: text.index(text.startIndex, offsetBy: maximumCharactersLimit - 1))
-            textField.text = modifiedText
+            textField.text = removeAndInsertCharacter(at: text.index(text.startIndex,
+                                                                     offsetBy: maximumCharactersLimit - 1),
+                                                      withElement: "1",
+                                                      for: modifiedText)
             return
         }
+    }
+    
+    func removeAndInsertCharacter(at index: String.Index, withElement char: Character, for string: String) -> String {
+        var updatedText = string
+        updatedText.remove(at: index)
+        updatedText.insert(char, at: index)
+        return updatedText
     }
 }
 
