@@ -15,6 +15,7 @@
 		F8C0225A2537B0AF000EB86F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C022582537B0AF000EB86F /* LaunchScreen.storyboard */; };
 		F8C022652537B0AF000EB86F /* task_projectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C022642537B0AF000EB86F /* task_projectTests.swift */; };
 		F8C022702537B0AF000EB86F /* task_projectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C0226F2537B0AF000EB86F /* task_projectUITests.swift */; };
+		F8C0227E25380A31000EB86F /* ControllerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C0227D25380A31000EB86F /* ControllerViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F8C0226B2537B0AF000EB86F /* task-projectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "task-projectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C0226F2537B0AF000EB86F /* task_projectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = task_projectUITests.swift; sourceTree = "<group>"; };
 		F8C022712537B0AF000EB86F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8C0227D25380A31000EB86F /* ControllerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				F8C022642537B0AF000EB86F /* task_projectTests.swift */,
+				F8C0227D25380A31000EB86F /* ControllerViewModelTests.swift */,
 				F8C022662537B0AF000EB86F /* Info.plist */,
 			);
 			path = "task-projectTests";
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8C0227E25380A31000EB86F /* ControllerViewModelTests.swift in Sources */,
 				F8C022652537B0AF000EB86F /* task_projectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
