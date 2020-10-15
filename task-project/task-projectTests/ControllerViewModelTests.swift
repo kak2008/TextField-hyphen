@@ -59,4 +59,14 @@ class ControllerViewModelTests: XCTestCase {
         }
         XCTAssertEqual("1ay-b-i1-92", text2)
     }
+    
+    func test_isAlphaNumbericalString() {
+        ["16782", "asajjdwn", "hjg179291"].forEach { (text) in
+            XCTAssertTrue(text.isAlphaNumbericalString)
+        }
+        
+        ["167*82", "asaj@jdwn", "hjg17/9291"].forEach { (text) in
+            XCTAssertFalse(text.isAlphaNumbericalString)
+        }
+    }
 }

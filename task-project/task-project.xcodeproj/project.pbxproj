@@ -16,6 +16,7 @@
 		F8C022652537B0AF000EB86F /* task_projectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C022642537B0AF000EB86F /* task_projectTests.swift */; };
 		F8C022702537B0AF000EB86F /* task_projectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C0226F2537B0AF000EB86F /* task_projectUITests.swift */; };
 		F8C0227E25380A31000EB86F /* ControllerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C0227D25380A31000EB86F /* ControllerViewModelTests.swift */; };
+		F8C0228025381C8A000EB86F /* ControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C0227F25381C8A000EB86F /* ControllerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		F8C0226F2537B0AF000EB86F /* task_projectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = task_projectUITests.swift; sourceTree = "<group>"; };
 		F8C022712537B0AF000EB86F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8C0227D25380A31000EB86F /* ControllerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerViewModelTests.swift; sourceTree = "<group>"; };
+		F8C0227F25381C8A000EB86F /* ControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				F8C0224D2537B0AB000EB86F /* AppDelegate.swift */,
 				F8C0224F2537B0AB000EB86F /* SceneDelegate.swift */,
 				F8C022512537B0AB000EB86F /* ViewController.swift */,
+				F8C0227F25381C8A000EB86F /* ControllerViewModel.swift */,
 				F8C022532537B0AB000EB86F /* Main.storyboard */,
 				F8C022562537B0AF000EB86F /* Assets.xcassets */,
 				F8C022582537B0AF000EB86F /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8C0228025381C8A000EB86F /* ControllerViewModel.swift in Sources */,
 				F8C022522537B0AB000EB86F /* ViewController.swift in Sources */,
 				F8C0224E2537B0AB000EB86F /* AppDelegate.swift in Sources */,
 				F8C022502537B0AB000EB86F /* SceneDelegate.swift in Sources */,
