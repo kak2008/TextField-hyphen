@@ -37,4 +37,26 @@ class ControllerViewModelTests: XCTestCase {
             XCTAssertTrue(viewModel.isCharacterInsertLocation(rangeLocationNum))
         }
     }
+    
+    func test_removeAndInsertCharacter() {
+        let text = "Hello"
+        let testText = viewModel.removeAndInsertCharacter(at: text.index(text.startIndex, offsetBy: 1),
+                                                          withElement: "-",
+                                                          for: text)
+        XCTAssertEqual("H-llo", testText)
+        
+        let testText2 = viewModel.removeAndInsertCharacter(at: text.index(text.startIndex, offsetBy: 1),
+                                                          withElement: "E",
+                                                          for: text)
+        XCTAssertEqual("HEllo", testText2)
+        
+        var text2 = "1ayub-i1892"
+        [3, 5, 8].forEach { (num) in
+            let testText3 = viewModel.removeAndInsertCharacter(at: text2.index(text.startIndex, offsetBy: num),
+                                                               withElement: "-",
+                                                               for: text2)
+            text2 = testText3
+        }
+        XCTAssertEqual("1ay-b-i1-92", text2)
+    }
 }
